@@ -1,18 +1,57 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
- import Index from '../components/index'
+
+ import Login from '../views/lr/login.vue'
+ import Regist from '../views/lr/register.vue'
+ import Personal from '../views/personal/index.vue'
+ import Index from '../views/index.vue'
 let router =new VueRouter({
     routes:[
         {
-            name:'index',
+            name:'login',
+            path:'/login',
+            components:Login
+        },
+        {
+            name:'register',
+            path:'/register',
+            components:Regist
+        },
+        {
+            name:'personalIndex',
             path:'/index',
+            components:Personal
+        }
+       ,
+        {
+            name:'index',
+            path:'/',
             components:Index
         }
     ]
 })
 
 export default router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 总结：配置路由分为以下几个步骤：
 // 1、引入vue模块
 // 2、引入下载好的vue-router模块
