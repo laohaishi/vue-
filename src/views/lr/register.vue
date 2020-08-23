@@ -70,6 +70,7 @@ export default {
       }).then(res=>{
         if(res.data.message=='注册成功'){
           this.$toast.success('注册成功')
+          this.$router.replace('/login')
         }else{
           this.$toast.fail(res.data.message)
         }

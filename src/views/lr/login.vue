@@ -14,7 +14,7 @@
       @valChange='setUsername'
     />
     <Input
-      :type="password"
+      type="password"
       placeholder="请输入密码"
       :rule='/^\d{3,6}$/'
       err_message='请输入合法的密码'
@@ -42,11 +42,13 @@ export default {
   },
   methods:{
     login(){
+      
       if(!this.username || !this.password){
         this.$toast.fail('请填写完整信息')
         return;
       }
-      this.$axios({
+      console.log(this.username,this.password);
+      this.$axios({    
         method:'post',
         url:'http://127.0.0.1:3000/login',
         data:{
@@ -56,6 +58,10 @@ export default {
       }).then(res=>{
         if(res.data.message=='登录成功'){
           this.$toast.success('登录成功')
+          console.log(res.data.data);
+          localStorage.setItem('token',res.data.data.token)
+          localStorage.setItem('userId',res.data.data.user.id)
+          this.$router.push('/personal')
         }else{
           this.$toast.fail(res.data.message)
         }
