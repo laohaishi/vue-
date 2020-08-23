@@ -57,5 +57,8 @@ export default {
   .error {
     border-color: red;
   }
+  .success{
+    border-color:green;
+  }
 }
 </style>

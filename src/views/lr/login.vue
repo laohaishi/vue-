@@ -15,7 +15,7 @@
     />
     <Input
       :type="password"
-      :placeholder="请输入密码"
+      placeholder="请输入密码"
       :rule='/^\d{3,6}$/'
       err_message='请输入合法的密码'
       @valChange='setPassword'
@@ -26,8 +26,9 @@
 </template>
 
 <script>
-import Btn from "../../components/btn";
 import Input from "../../components/input";
+import Btn from "../../components/btn";
+
 export default {
   data () {
     return {

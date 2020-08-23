@@ -14,15 +14,15 @@
       @valChange='setUsername'
     />
     <Input
-      :type="password"
-      :placeholder="请输入密码"
+      type="password"
+      placeholder="请输入密码"
       :rule='/^\d{3,6}$/'
       err_message='请输入合法的密码'
       @valChange='setPassword'
     />
     <Input
-      :type="text"
-      :placeholder="昵称"
+      type="text"
+      placeholder="昵称"
       :rule='/^\w{3,5}$/'
       err_message='请输入正确的昵称'
       @valChange='setNickname'

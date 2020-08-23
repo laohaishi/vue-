@@ -11,23 +11,22 @@ let router =new VueRouter({
         {
             name:'login',
             path:'/login',
-            components:Login
+            component:Login
         },
         {
             name:'register',
             path:'/register',
-            components:Regist
+            component:Regist
         },
         {
-            name:'personalIndex',
-            path:'/index',
-            components:Personal
-        }
-       ,
+            name:'personal',
+            path:'/personal',
+            component:Personal
+        } ,    
         {
             name:'index',
             path:'/',
-            components:Index
+            component:Index
         }
     ]
 })

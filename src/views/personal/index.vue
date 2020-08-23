@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div>
     <div class="profile">
-      <img src alt />
+      <img class="avatar" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1927727249,2644777397&fm=26&gp=0.jpg" alt="">
       <div class="info">
         <div class="name">
           <span class="iconfont iconxingbienan"></span>

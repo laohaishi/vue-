@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-      <router-view></router-view>
+  <div >
       <router-link to="/login">登录</router-link><br>
       <router-link to="/register">注册</router-link><br>
-      <router-link to="/index">个人中心</router-link><br>
+      <router-link to="/personal">个人中心</router-link><br>
       <van-button type=primary>主要按钮</van-button><br>
       <van-button type=primary size='mini'>主要按钮</van-button>
+      <router-view></router-view>
   </div>
 </template>
 

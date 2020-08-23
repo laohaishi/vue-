@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    首页
-    <login></login>
+   <router-view></router-view>
   </div>
 </template>
 
 <script>
-import login from './components/login'
 export default {
-  components: {
-    login
-  }
 };
 </script>
 

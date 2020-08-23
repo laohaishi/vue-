@@ -1,7 +1,8 @@
 import Vue from 'vue'
-// import App from './App.vue'
-import App from './views/index.vue'
-import Router from './router/router'
+import App from './App.vue'
+// import App from './views/index.vue'
+import router from './router/router'
+//注意router 不能写成大写
 
 import Vant from 'vant'
 import 'vant/lib/index.css'
@@ -13,6 +14,6 @@ Vue.prototype.$axios=axios
 Vue.config.productionTip = false
 
 new Vue({
-  Router,
+  router,
   render: h => h(App),
 }).$mount('#app')
