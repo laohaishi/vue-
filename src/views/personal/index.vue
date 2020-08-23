@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pro">
     <div class="profile">
       <img class="avatar" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1927727249,2644777397&fm=26&gp=0.jpg" alt="">
       <div class="info">
@@ -9,8 +9,9 @@
         </div>
         <div class="date">2020-08-22</div>
       </div>
-      <span class="iconfont iconjiantou1"></span>
+      <span class="iconfont iconjiantou1" id="icon"></span>
     </div>
+
     <Personal labelText='我的关注' descText='关注我的用户' @handleClick="logLabel('跳出我的关注')"></Personal>
     <Personal labelText='我的跟帖' descText='跟帖/回复' @handleClick="logLabel('跳出我的跟帖')"></Personal>
     <Personal labelText='我的收藏' descText='文章/视频' @handleClick="logLabel('跳出我的收藏')"></Personal>
@@ -34,7 +35,7 @@ export default {
 
 <style lang="less" scoped>
 .profile {
-  padding: 24/360 * 100vw;
+  padding: 20/360 * 100vw;
   display: flex;
   align-items: center;
   border-bottom: 4/360 * 100vw solid #e4e4e4;
@@ -49,7 +50,7 @@ export default {
     border-radius: 50%;
   }
   .info {
-    flex: 1;
+    width: 300px;
     padding-left: 16/360 * 100vw;
     .name {
       font-size: 16/360 * 100vw;
@@ -60,5 +61,9 @@ export default {
       margin-top: 6/360 * 100vw;
     }
   }
+  .icon{
+    padding-left: 30px;
+  }
+
 }
 </style>

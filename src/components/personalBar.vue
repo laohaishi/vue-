@@ -29,7 +29,7 @@ export default {
         color: #333;
     }
     .desc {
-        flex: 1;
+        // flex: 1;
         text-align: right;
         font-size: 14/360*100vw;
         color: #888;

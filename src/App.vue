@@ -12,7 +12,7 @@ export default {
 <style lang="less">
 @import url("http://at.alicdn.com/t/font_1426139_h6vn3jbl5q.css");
 div {
-  width: 200/360 * 100vw;
+  width: 400/360 * 100vw;
 }
 span {
   color: greenyellow;
