@@ -6,6 +6,7 @@
     <div class="logo">
       <span class="iconfont iconnew"></span>
     </div>
+    <div class="buju">
     <Input
       type="text"
       placeholder="请输入用户名/手机号"
@@ -21,7 +22,7 @@
       @valChange='setPassword'
     />
     <Btn btnText='登录' @handleClick='login'></Btn>
-    
+    </div>
   </div>
 </template>
 
@@ -41,8 +42,7 @@ export default {
     Input
   },
   methods:{
-    login(){
-      
+    login(){     
       if(!this.username || !this.password){
         this.$toast.fail('请填写完整信息')
         return;
@@ -79,6 +79,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#login{
+  background: url('../../img/bg.jpg') no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 680px;
+  color: aliceblue;
+}
 .pageWrapper {
   padding: 24/360 * 100vw;
 }
@@ -91,5 +98,8 @@ export default {
 .iconnew {
   font-size: 126/360*100vw;
   color: #cc3300;
+}
+.buju{
+  margin: 23%;
 }
 </style>

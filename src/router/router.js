@@ -6,12 +6,19 @@ Vue.use(VueRouter)
  import Regist from '../views/lr/register.vue'
  import Personal from '../views/personal/index.vue'
  import Index from '../views/index.vue'
+ import Edit from '../views/personal/edit.vue'
+
+ import Yemian1 from '../views/tiaozhuang/yemian1.vue'
+ import Yemian2 from '../views/tiaozhuang/yemian2.vue'
+ import Yemian3 from '../views/tiaozhuang/yemian3.vue'
+
 let router =new VueRouter({
     routes:[
         {
             name:'login',
             path:'/login',
             component:Login
+            
         },
         {
             name:'register',
@@ -21,12 +28,33 @@ let router =new VueRouter({
         {
             name:'personal',
             path:'/personal',
-            component:Personal
+            component:Personal,
+            meta:{
+                needAuth:true
+            }
         } ,    
         {
-            name:'index',
             path:'/',
             component:Index
+        },
+        {
+            path:'/yemian1',
+            component:Yemian1
+        },
+        {
+            path:'/yemian2',
+            component:Yemian2
+        },
+        {
+            path:'/yemian3',
+            component:Yemian3
+        },
+        {
+            path:'/edit',
+            component:Edit,
+            meta:{
+                needAuth:true
+            }
         }
     ]
 })

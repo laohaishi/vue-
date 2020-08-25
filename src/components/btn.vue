@@ -17,13 +17,14 @@ export default {
 
 <style lang="less" scoped>
 .btn {
-  width: 100%;
+  width: 38.777778vw;
+  height: 13.555556vw;
   background-color: #cc3300;
   color: #fff;
   font-size: 18/360 * 100vw;
   line-height: 48/360 * 100vw;
   border-radius: 24/360 * 100vw;
   text-align: center;
-  margin-top: 40/360 * 100vw;
+  margin: 40/360 * 100vw 9% 0/360*100vw;
 }
 </style>

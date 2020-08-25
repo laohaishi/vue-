@@ -6,7 +6,7 @@ import router from './router/router'
 //路由拦截器,在路由跳转前进行拦截,只有通过next()放行函数才能往下执行
 router.beforeEach((to, from, next) => {
   console.log('to',to,'from',from);
-  if(to.path=='/personal'){
+  if(to.meta.needAuth){
     if(localStorage.getItem('token')){
       next();
     }else{

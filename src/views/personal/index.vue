@@ -1,19 +1,24 @@
 <template>
   <div class="pro">
-    <div class="profile">
+    <div class="profile" @click="$router.push('/edit')">
       <!-- <img class="avatar" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1927727249,2644777397&fm=26&gp=0.jpg" alt=""> -->
-      <img v-if='user.head_img' class="avatar" :src="'http://127.0.0.1:3000'+user.head_img" alt="">
-      <img v-else src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1927727249,2644777397&fm=26&gp=0.jpg" alt="" class="avatar">
+      <img v-if="user.head_img" class="avatar" :src="'http://127.0.0.1:3000'+user.head_img" alt />
+      <img
+        v-else
+        src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1927727249,2644777397&fm=26&gp=0.jpg"
+        alt
+        class="avatar"
+      />
       <div class="info">
         <div class="name">
           <!-- 方法一: -->
           <span v-if="user.gender==1" class="iconfont iconxingbienan"></span>
-          <span v-if='user.gender==0' class="iconfont iconxingbienv"></span>
+          <span v-if="user.gender==0" class="iconfont iconxingbienv"></span>
           <!-- 方法二: -->
           <!-- <span class="iconfont" :class='{
             iconxingbienan:userInfo.gender==1,
             iconxingbienv:userInfo.gender==0
-            }'></span> -->
+          }'></span>-->
           {{user.nickname}}
         </div>
         <div class="date">2020-08-22</div>
@@ -21,56 +26,60 @@
       </div>
       <span class="iconfont iconjiantou1" id="icon"></span>
     </div>
-    <Personal labelText='我的关注' descText='关注我的用户' @handleClick="logLabel('跳出我的关注')"></Personal>
-    <Personal labelText='我的跟帖' descText='跟帖/回复' @handleClick="logLabel('跳出我的跟帖')"></Personal>
-    <Personal labelText='我的收藏' descText='文章/视频' @handleClick="logLabel('跳出我的收藏')"></Personal>
-    <Personal labelText='设置'  @handleClick="logLabel('跳出我的')"></Personal>
-    <Personal labelText='退出登录'  @handleClick="logOut"></Personal>
-    
+    <Personal labelText="我的关注" descText="关注我的用户" @handleClick="$router.push('/yemian1')"></Personal>
+    <Personal labelText="我的跟帖" descText="跟帖/回复" @handleClick="$router.push('/yemian2')"></Personal>
+    <Personal labelText="我的收藏" descText="文章/视频" @handleClick="$router.push('/yemian3')"></Personal>
+    <Personal labelText="设置" @handleClick="$router.push('/edit')"></Personal>
+    <Personal labelText="退出登录" @handleClick="logOut"></Personal>
   </div>
 </template>
 
 <script>
 import Personal from "../../components/personalBar";
 export default {
-  data () {
+  data() {
     return {
-    user:{}  
-    }
+      user: {},
+    };
   },
   components: { Personal },
-  methods:{
-      logLabel(label){
-          console.log(label);
-      },
-      logOut(){
-        localStorage.clear();
-        this.$router.replace('/')
-      }
+  methods: {
+    // logLabel(label){
+    //     console.log(label);
+
+    // },
+    logOut() {
+      localStorage.clear();
+      this.$router.replace("/");
+    },
   },
-  created () {
-        // console.log(localStorage.getItem('token'));
-        // console.log(localStorage.getItem('userId'));
-        this.$axios({
-          url:'http://127.0.0.1:3000/user/' + localStorage.getItem('userId'),
-          headers:{
-            Authorization:'Bearer '+localStorage.getItem('token')
-          }
-        }).then(res=>{
-          if(res.data.message=='用户信息验证失败'){
-            localStorage.clear();
-            this.$router.replace('/login')
-            return;
-          }
-          console.log(res.data);
-          this.user=res.data.data
-          console.log(this.user);
-        })
+  created() {
+    // console.log(localStorage.getItem('token'));
+    // console.log(localStorage.getItem('userId'));
+    this.$axios({
+      url: "http://127.0.0.1:3000/user/" + localStorage.getItem("userId"),
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    }).then((res) => {
+      if (res.data.message == "用户信息验证失败") {
+        localStorage.clear();
+        this.$router.replace("/login");
+        return;
       }
+      console.log(res.data);
+      this.user = res.data.data;
+      console.log(this.user);
+    });
+  },
 };
 </script>
 
 <style lang="less" scoped>
+.pro{
+  // width: 120%;
+  height: 680px;
+}
 .profile {
   padding: 20/360 * 100vw;
   display: flex;
@@ -98,14 +107,14 @@ export default {
       margin-top: 6/360 * 100vw;
     }
   }
-  .icon{
+  .icon {
     padding-left: 30px;
   }
-   .iconxingbienan {
-            color: #71b1e1;
-        }
-        .iconxingbienv {
-            color: #ea46ba;
-        }
+  .iconxingbienan {
+    color: #71b1e1;
+  }
+  .iconxingbienv {
+    color: #ea46ba;
+  }
 }
 </style>

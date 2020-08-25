@@ -6,7 +6,8 @@
     <div class="logo">
       <span class="iconfont iconnew"></span>
     </div>
-    <Input
+    <div class="buju">
+      <Input
       type="text"
       placeholder="请输入用户名/手机号"
       :rule='/^\d{5,11}$/'
@@ -28,6 +29,7 @@
       @valChange='setNickname'
     />
     <Btn btnText='注册' @handleClick='register'></Btn>
+    </div>
     
   </div>
 </template>
@@ -93,5 +95,8 @@ export default {
 .iconnew {
   font-size: 126/360 * 100vw;
   color: #cc3300;
+}
+.buju{
+  margin: 25%;
 }
 </style>

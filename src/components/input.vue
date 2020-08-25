@@ -53,6 +53,7 @@ export default {
     border-bottom: 1px solid #888;
     font-size: 18/360 * 100vw;
     line-height: 50/360 * 100vw;
+  
   }
   .error {
     border-color: red;
