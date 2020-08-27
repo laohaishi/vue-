@@ -12,8 +12,16 @@ Vue.use(VueRouter)
  import Yemian2 from '../views/tiaozhuang/yemian2.vue'
  import Yemian3 from '../views/tiaozhuang/yemian3.vue'
 
+ import Test from '../views/test.vue'
+
 let router =new VueRouter({
     routes:[
+        {
+            name:'test',
+            path:'/test',
+            component:Test
+            
+        },
         {
             name:'login',
             path:'/login',

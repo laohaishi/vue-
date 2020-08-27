@@ -84,7 +84,7 @@ export default {
   background-size: cover;
   width: 100%;
   height: 680px;
-  color: aliceblue;
+  color: rgb(135, 136, 138);
 }
 .pageWrapper {
   padding: 24/360 * 100vw;

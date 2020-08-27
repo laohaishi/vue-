@@ -46,7 +46,7 @@ export default {
 
 <style lang="less" scoped>
 .inputWrapper {
-  input {
+ input {
     width: 100%;
     border: none;
     outline: none;
