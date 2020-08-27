@@ -19,8 +19,8 @@ let router =new VueRouter({
         {
             name:'test',
             path:'/test',
-            component:Test
-            
+            component:Test,
+            meta: { options:true }
         },
         {
             name:'login',

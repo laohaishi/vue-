@@ -1,34 +1,36 @@
 <template>
   <div>
-      2345
-    <!-- <Test></Test> -->
-    <button @click="show=true">aa</button>
-    <van-dialog  v-model="show"  title="标题" @confirm="aa" show-cancel-button>
-      <!-- <img src="https://img.yzcdn.cn/vant/apple-3.jpg" /> -->
-      dd
-    </van-dialog>
+    <van-tabs v-model="activeCateIndex">
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+      <van-tab title="2">111</van-tab>
+    </van-tabs>
+    <van-tag type="primary">标签</van-tag>
+<van-tag type="success">标签</van-tag>
+<van-tag type="danger">标签</van-tag>
+<van-tag type="warning">标签</van-tag>
   </div>
 </template>
 
 <script>
-import Test from "../components/acitveList";
-// export default {
-    
-//   components: { Test },
-// };
-export default {
-  data() {
-    return {
-      show: false,
-    };
-  },
-  methods:{
-      aa(){
-          console.log('aa');
-
-      }
-  }
-};
+export default {};
 </script>
 
 <style>

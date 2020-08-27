@@ -26,13 +26,13 @@ export default {
     border-bottom: 1px solid #e4e4e4;
     .label {
         font-size: 14/360*100vw;
-        color: rgb(250, 249, 249);
+        // color: rgb(250, 249, 249);
     }
     .desc {
         flex: 1;
         text-align: right;
         font-size: 14/360*100vw;
-        color: rgb(255, 251, 251);
+        // color: rgb(255, 251, 251);
         padding-right: 6/360*100vw;
     }
 }

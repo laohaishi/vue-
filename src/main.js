@@ -37,6 +37,17 @@ axios.interceptors.response.use(res=>{
   }
   return res;
 })
+axios.interceptors.request.use((a)=>{
+
+  if (localStorage.getItem('token') && !a.headers.Authorization) {
+    a.headers.Authorization = "Bearer " + localStorage.getItem('token')
+  }
+
+
+
+
+  return a
+})
 Vue.config.productionTip = false
 
 new Vue({

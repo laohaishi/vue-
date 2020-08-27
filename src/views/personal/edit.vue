@@ -10,13 +10,26 @@
       alt
       class="avatar"
     />
-    <PersonalBar labelText="昵称" :descText="user.nickname" @handleClick="$router.push('/yemian1')" />
-    <PersonalBar labelText="密码" descText="******" @handleClick="$router.push('/yemian1')" />
+    <PersonalBar labelText="昵称" :descText="user.nickname" @handleClick="showusername=true" />
+    <PersonalBar labelText="密码" descText="******" @handleClick="showpassword=true" />
     <PersonalBar
       labelText="性别"
       :descText="user.gender==1?'男':'女'"
-      @handleClick="$router.push('/yemian1')"
+      @handleClick="showgender=true"
     />
+    <van-dialog v-model="showusername" title="修改昵称" show-cancel-button @confirm="setnickname">
+      <van-cell-group>
+        <van-field v-model="username" placeholder="请输入用户名" />
+      </van-cell-group>
+    </van-dialog>
+
+    <van-dialog v-model="showpassword" title="修改密码" show-cancel-button @confirm="setpassword">
+      <van-cell-group>
+        <van-field v-model="password" type="password" placeholder="请输入密码" />
+      </van-cell-group>
+    </van-dialog>
+
+    <van-action-sheet v-model="showgender" cancel-text="取消" :actions="actions" @select="setgender" />
   </div>
 </template>
 
@@ -27,6 +40,15 @@ export default {
   data() {
     return {
       user: {},
+      showusername: false,
+      showpassword: false,
+      showgender:false,
+      username: "",
+      password: "",
+      actions: [
+        { name: "nan", gender: 1 },
+        { name: "nv", gender: 0 },
+      ],
     };
   },
   components: {
@@ -37,13 +59,35 @@ export default {
     loadPage() {
       this.$axios({
         url: "/user/" + localStorage.getItem("userId"),
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
+    
       }).then((res) => {
         // console.log(res.data);
         this.user = res.data.data;
         console.log(this.user);
+      });
+    },
+    setnickname() {
+      this.updata({ nickname: this.username });
+      this.username = "";
+    },
+    setpassword() {
+      this.updata({ password: this.password });
+      this.password = "";
+    },
+    setgender(a) {
+      this.updata({ gender: a.gender });
+      this.showgender=false
+    },
+    updata(aaa) {
+      this.$axios({
+        method: "post",
+        url: "/user_update/" + localStorage.getItem("userId"),
+    
+        data: aaa,
+      }).then((res) => {
+        //成功回调
+        console.log(res);
+        this.loadPage();
       });
     },
   },
