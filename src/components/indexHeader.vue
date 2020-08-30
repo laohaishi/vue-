@@ -1,40 +1,52 @@
 <template>
-  <div class="headerWrapper">
-    <span class="iconfont iconnew"></span>
-    <div class="searchWrapper">
-      <span class="iconfont iconsearch"></span>
-      搜索新闻
+  <div>
+    <div class="header">
+      <span class="iconfont iconnew new" @click="$router.push('/login')"></span>
+      <div class="inp">
+        <span class="iconfont iconsearch"></span>
+        搜索新闻
+      </div>
+      <span class="iconfont iconwode personal" @click="$router.push('/personal')"></span>
     </div>
-    <span class="iconfont iconwode" @click="$router.push('/personal')"></span>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+methods:{
+ 
+}
+}
 </script>
 
 <style lang="less" scoped>
-.headerWrapper {
-  background: red;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 0 12/360 * 100vw;
-  .iconnew {
-    font-size: 54/360 * 100vw;
-  }
-  .searchWrapper {
-    flex: 1;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.5);
-    line-height: 36/360 * 100vw;
-    margin: 0 20/360 * 100vw;
-    border-radius: 18/360 * 100vw;
-    font-size: 16/360 * 100vw;
-  }
-  .iconwode {
-    font-size: 32/360 * 100vw;
-    opacity: 0.7;
-  }
-}
+    .header{
+      background-color: red;
+      padding:6/360*100vw;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      .new{
+        font-size: 50px;
+      }
+      .inp{
+        flex:1;
+        margin:0 30px;
+        background-color: rgba(243, 239, 239, 0.432);
+        width: 100/360*100vw;
+        height: 40/360*100vw;
+        line-height: 40/360*100vw;
+        text-align: center;
+        border-radius: 20/360*100vw;   
+        .iconfont{
+          font-size: 14px;
+        }
+      }
+      .personal{
+        font-size: 30px;
+        
+      }
+    }
 </style>

@@ -2,68 +2,96 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
- import Login from '../views/lr/login.vue'
- import Regist from '../views/lr/register.vue'
- import Personal from '../views/personal/index.vue'
- import Index from '../views/index.vue'
- import Edit from '../views/personal/edit.vue'
+import Login from '../views/lr/login.vue'
+import Regist from '../views/lr/register.vue'
 
- import Yemian1 from '../views/tiaozhuang/yemian1.vue'
- import Yemian2 from '../views/tiaozhuang/yemian2.vue'
- import Yemian3 from '../views/tiaozhuang/yemian3.vue'
+import Personal from '../views/personal/index.vue'
+import Index from '../views/index.vue'
+import Edit from '../views/personal/edit.vue'
 
- import Test from '../views/test.vue'
+import guanzhuye from '../views/tiaozhuang/guanzhuye.vue'
+import gentie from '../views/tiaozhuang/gentie.vue'
+import shoucangye from '../views/tiaozhuang/shoucangye.vue'
+import xiangqingye from '../views/tiaozhuang/xiangqingye.vue'
 
-let router =new VueRouter({
-    routes:[
+import Test from '../views/test.vue'
+import tabs from '../components/tabs.vue'
+
+let router = new VueRouter({
+    routes: [
         {
-            name:'test',
-            path:'/test',
-            component:Test,
-            meta: { options:true }
+            path: '/',
+            component: Index
         },
         {
-            name:'login',
-            path:'/login',
-            component:Login
-            
-        },
-        {
-            name:'register',
-            path:'/register',
-            component:Regist
-        },
-        {
-            name:'personal',
-            path:'/personal',
-            component:Personal,
-            meta:{
-                needAuth:true
+            name: 'test',
+            path: '/test',
+            component: Test,
+            meta: {
+                needAuth: true
             }
-        } ,    
-        {
-            path:'/',
-            component:Index
         },
         {
-            path:'/yemian1',
-            component:Yemian1
-        },
-        {
-            path:'/yemian2',
-            component:Yemian2
-        },
-        {
-            path:'/yemian3',
-            component:Yemian3
-        },
-        {
-            path:'/edit',
-            component:Edit,
-            meta:{
-                needAuth:true
+            name: 'tabs',
+            path: '/tabs',
+            component: tabs,
+            meta: {
+                needAuth: true
             }
+        },
+        {
+            name: 'login',
+            path: '/login',
+            component: Login
+
+        },
+        {
+            name: 'register',
+            path: '/register',
+            component: Regist
+        },
+        {
+            name: 'personal',
+            path: '/personal',
+            component: Personal,
+            meta: {
+                needAuth: true
+            }
+        },
+        {
+            path: '/edit',
+            component: Edit,
+            meta: {
+                needAuth: true
+            }
+        },
+
+        {
+            path: '/guanzhuye',
+            component: guanzhuye,
+            meta: {
+                needAuth: true
+            }
+        },
+        {
+            path: '/gentie',
+            component: gentie,
+            meta: {
+                needAuth: true
+            }
+        },
+        {
+            path: '/shoucangye',
+            component: shoucangye,
+            meta: {
+                needAuth: true
+            }
+        },
+        {
+            path: '/xiangqingye',
+            component: xiangqingye
         }
+
     ]
 })
 

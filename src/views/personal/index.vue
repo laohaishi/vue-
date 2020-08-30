@@ -26,9 +26,9 @@
       </div>
       <span class="iconfont iconjiantou1" id="icon"></span>
     </div>
-    <Personal labelText="我的关注" descText="关注我的用户" @handleClick="$router.push('/yemian1')"></Personal>
-    <Personal labelText="我的跟帖" descText="跟帖/回复" @handleClick="$router.push('/yemian2')"></Personal>
-    <Personal labelText="我的收藏" descText="文章/视频" @handleClick="$router.push('/yemian3')"></Personal>
+    <Personal labelText="我的关注" descText="关注我的用户" @handleClick="$router.push('/guanzhuye')"></Personal>
+    <Personal labelText="我的跟帖" descText="跟帖/回复" @handleClick="$router.push('/gentie')"></Personal>
+    <Personal labelText="我的收藏" descText="文章/视频" @handleClick="$router.push('/shoucangye')"></Personal>
     <Personal labelText="设置" @handleClick="$router.push('/edit')"></Personal>
     <Personal labelText="退出登录" @handleClick="logOut"></Personal>
   </div>

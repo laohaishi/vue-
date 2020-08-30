@@ -22,7 +22,9 @@
       @valChange='setPassword'
     />
     <Btn btnText='登录' @handleClick='login'></Btn>
+    <div class="regiest" @click="$router.push('/register')">如果还没登录,请点我先去注册</div>
     </div>
+    
   </div>
 </template>
 

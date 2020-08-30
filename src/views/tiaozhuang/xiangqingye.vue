@@ -1,5 +1,5 @@
 <template>
-  <div>我的跟帖</div>
+  
 </template>
 
 <script>

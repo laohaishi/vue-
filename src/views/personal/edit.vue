@@ -3,13 +3,10 @@
     <div class="tit" @click="$router.push('/personal')">
       <Title title="编辑资料" />
     </div>
-    <img v-if="user.head_img" class="avatar" :src="$axios.defaults.baseURL+user.head_img" alt />
-    <img
-      v-else
-      src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1927727249,2644777397&fm=26&gp=0.jpg"
-      alt
-      class="avatar"
-    />
+    <van-uploader :after-read="afterRead" class="avatar">
+    <img v-if="user.head_img" class="avatar" :src="$axios.defaults.baseURL+user.head_img" />
+    <img v-else src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1927727249,2644777397&fm=26&gp=0.jpg" alt class="avatar" />
+    </van-uploader>
     <PersonalBar labelText="昵称" :descText="user.nickname" @handleClick="showusername=true" />
     <PersonalBar labelText="密码" descText="******" @handleClick="showpassword=true" />
     <PersonalBar
@@ -56,14 +53,34 @@ export default {
     PersonalBar,
   },
   methods: {
+    //图片上传成功会触发的回调
+    afterRead(file) {
+      // 此时可以自行将文件上传至服务器
+      // console.log(file.file);
+      const fromdata=new FormData()
+      fromdata.append('file',file.file)
+      this.$axios({
+        method:'post',
+        url:'/upload',
+        data: fromdata
+      }).then(res=>{
+        //成功回调
+        // console.log(res,'11')
+        //调用封装的 修改功能的函数
+        this.updata({
+          head_img:res.data.data.url
+          
+        })
+      });
+    },
+    //获取当前页面信息 加载渲染
     loadPage() {
       this.$axios({
-        url: "/user/" + localStorage.getItem("userId"),
-    
+        url: "/user/" + localStorage.getItem("userId"),  
       }).then((res) => {
         // console.log(res.data);
         this.user = res.data.data;
-        console.log(this.user);
+        // console.log(this.user);
       });
     },
     setnickname() {
@@ -76,17 +93,17 @@ export default {
     },
     setgender(a) {
       this.updata({ gender: a.gender });
-      this.showgender=false
+      this.showgender=false;
     },
-    updata(aaa) {
+    //更新修改函数封装 传入的参数是一个对象
+    updata(obj) {
       this.$axios({
         method: "post",
-        url: "/user_update/" + localStorage.getItem("userId"),
-    
-        data: aaa,
+        url: "/user_update/" + localStorage.getItem("userId"),    
+        data: obj
       }).then((res) => {
         //成功回调
-        console.log(res);
+        // console.log(res,'22');
         this.loadPage();
       });
     },
@@ -98,7 +115,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-img {
+.avatar {
   display: flex;
   width: 70/360 * 100vw;
   height: 70/360 * 100vw;
