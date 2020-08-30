@@ -16,6 +16,7 @@ import xiangqingye from '../views/tiaozhuang/xiangqingye.vue'
 
 import Test from '../views/test.vue'
 import tabs from '../components/tabs.vue'
+import Digui from '../views/DiguiTest.vue'
 
 let router = new VueRouter({
     routes: [
@@ -30,6 +31,12 @@ let router = new VueRouter({
             meta: {
                 needAuth: true
             }
+        },
+        {
+            name: 'Digui',
+            path: '/Digui',
+            component: Digui,
+            
         },
         {
             name: 'tabs',
