@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-for="item in list" :key="item.id">
+  <div >
+    <div v-for="item in list" :key="item.id" @click="$router.push('/xiangqingye?id='+item.id)">
       <div class="onelist" v-if="item.type == 1 && item.cover.length >= 1 && item.cover.length < 3">
         <div class="content">
           <div class="title">{{item.title}}</div>
@@ -11,8 +11,6 @@
         </div>
         <img :src="item.cover[0].url" alt />
       </div>
-    </div>
-    <div v-for="item in list" :key="item.id">
       <div class="twoList" v-if="item.type == 1 && item.cover.length >= 3">
         <div class="content">
           <div class="title">{{item.title}}</div>
@@ -26,9 +24,7 @@
             <span>{{item.comment_length}}跟帖</span>
           </div>
         </div>
-      </div>
-    </div>
-    <div v-for="item in list" :key="item.id">
+      </div> 
       <div class="threeList" v-if="item.type == 2 && item.cover.length >= 1">
         <div class="content">
           <div class="title">{{item.title}}</div>
@@ -42,7 +38,7 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
   </div>
 </template>
 

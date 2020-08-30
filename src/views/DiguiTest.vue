@@ -1,16 +1,15 @@
 <template>
   <div>
-      <Digui :num='10' />
+    <Digui :num="10" />
   </div>
 </template>
 
 <script>
-import Digui from '../components/Digui'
+import Digui from "../components/Digui";
 export default {
-components:{Digui}
-}
+  components: { Digui },
+};
 </script>
 
 <style>
-
 </style>

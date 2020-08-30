@@ -8,7 +8,7 @@
       </van-tabs>
       <span class="iconfont icon"></span>
     </div>
-    <listContent></listContent>
+    <listContent ></listContent>
   </div>
 </template>
 
