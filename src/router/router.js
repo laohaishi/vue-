@@ -13,6 +13,7 @@ import guanzhuye from '../views/tiaozhuang/guanzhuye.vue'
 import gentie from '../views/tiaozhuang/gentie.vue'
 import shoucangye from '../views/tiaozhuang/shoucangye.vue'
 import xiangqingye from '../views/tiaozhuang/xiangqingye.vue'
+import lanmu from '../components/lanmu.vue'
 
 import Test from '../views/test.vue'
 import tabs from '../components/tabs.vue'
@@ -97,6 +98,13 @@ let router = new VueRouter({
         {
             path: '/xiangqingye',
             component: xiangqingye
+        },
+        {
+            path: '/lanmu',
+            component: lanmu,
+            meta: {
+                needAuth: true
+            }
         }
 
     ]
