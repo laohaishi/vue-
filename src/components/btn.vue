@@ -19,7 +19,7 @@ export default {
 .btn {
   width: 38.777778vw;
   height: 13.555556vw;
-  background-color: #cc3300;
+  background-color: #3eeb72;
   color: #fff;
   font-size: 18/360 * 100vw;
   line-height: 48/360 * 100vw;

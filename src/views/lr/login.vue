@@ -99,7 +99,7 @@ export default {
 }
 .iconnew {
   font-size: 126/360*100vw;
-  color: #cc3300;
+  color: #00cc77;
 }
 .buju{
   margin: 23%;

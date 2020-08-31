@@ -21,7 +21,7 @@ methods:{
 
 <style lang="less" scoped>
     .header{
-      background-color: red;
+      background-color: rgb(86, 231, 134);
       padding:6/360*100vw;
       display:flex;
       align-items: center;
