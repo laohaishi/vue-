@@ -32,7 +32,7 @@ export default {
   created () {
     this.$axios({
       method:'get',
-      url:'/post_comment/1',
+      url:'/user_comments',
       params: 1
     }).then(res=>{
       //成功回调

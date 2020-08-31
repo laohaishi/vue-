@@ -35,13 +35,15 @@
         </div>
       </div>
     </div>
+    <jincaigentie></jincaigentie>
   </div>
 </template>
 
 <script>
 import xiangqingHead from "../../components/xiangqingHead";
+import jincaigentie from '../tiaozhuang/jincaigentie'
 export default {
-  components: { xiangqingHead },
+  components: { xiangqingHead,jincaigentie },
   data() {
     return {
       list: {},

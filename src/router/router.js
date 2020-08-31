@@ -14,6 +14,7 @@ import gentie from '../views/tiaozhuang/gentie.vue'
 import shoucangye from '../views/tiaozhuang/shoucangye.vue'
 import xiangqingye from '../views/tiaozhuang/xiangqingye.vue'
 import lanmu from '../components/lanmu.vue'
+import jincaigentie from '../views/tiaozhuang/jincaigentie.vue'
 
 import Test from '../views/test.vue'
 import tabs from '../components/tabs.vue'
@@ -84,6 +85,13 @@ let router = new VueRouter({
         {
             path: '/gentie',
             component: gentie,
+            meta: {
+                needAuth: true
+            }
+        },
+        {
+            path: '/jincaigentie',
+            component: jincaigentie,
             meta: {
                 needAuth: true
             }
